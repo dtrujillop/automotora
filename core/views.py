@@ -4,6 +4,9 @@ from .models import Automovil, Marca
 from django.contrib import messages
 #Nuevo comentario
 
+from django.contrib.auth.decorators import login_required
+#un decorador nos permite agregar funcionalidad a un metodo
+
 # Create your views here.
 
 def home(request):
@@ -22,7 +25,7 @@ def listado(request):
         'autos':autos
     })
 
-
+@login_required
 def formulario(request):
     marcas = Marca.objects.all()
     #declaramos el diccionario de variables que se enviaran al template

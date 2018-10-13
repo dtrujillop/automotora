@@ -29,6 +29,14 @@ ALLOWED_HOSTS = []
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
+#le decimos a django donde se redigira el usuario
+#una vez se haya sido autenticado correctamente
+LOGIN_REDIRECT_URL = "/"
+
+#LE DECIMOS DONDE SERA REDIRIGIDO EL USUARIO CIERRE
+#SESSION
+LOGOUT_REDIRECT_URL = "/accounts/login"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'accounts',
 ]
 
 MIDDLEWARE = [
